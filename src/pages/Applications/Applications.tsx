@@ -1,4 +1,3 @@
-// src/pages/Applications/Applications.tsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { Button, Spinner } from "@heroui/react";

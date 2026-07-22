@@ -6,7 +6,6 @@ import Register from "../../pages/Register/Register";
 import Login from "../../pages/Login/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Dashboard from "../../pages/Dashboard/Dashboard";
-import AllApplications from "../../pages/AllApplications/AllApplications";
 import EditApplications from "../../pages/EditApplications/EditApplications";
 import AddApplication from "../../pages/AddApplication/AddApplication";
 import Applications from "../../pages/Applications/Applications";
@@ -26,10 +25,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/all-applications",
+        path: "/applications",
         element: (
           <PrivateRoute>
-            <AllApplications />
+            <Applications />
           </PrivateRoute>
         ),
       },
@@ -46,14 +45,6 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddApplication />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/applications",
-        element: (
-          <PrivateRoute>
-            <Applications />
           </PrivateRoute>
         ),
       },

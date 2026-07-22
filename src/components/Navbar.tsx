@@ -17,12 +17,12 @@ const Navbar = () => {
 
         {/* Nav links - hidden on mobile for now, we'll add a mobile menu later if time allows */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#3A3F4B]">
-          <NavLink to={"/"} className="hover:text-[#3D7A6E] transition-colors">
+          {/* <NavLink to={"/"} className="hover:text-[#3D7A6E] transition-colors">
             Features
           </NavLink>
           <NavLink to={"/"} className="hover:text-[#3D7A6E] transition-colors">
             How it works
-          </NavLink>
+          </NavLink> */}
           {user && (
             <>
               {" "}
@@ -33,17 +33,17 @@ const Navbar = () => {
                 Dashboard
               </NavLink>
               <NavLink
-                to={"/all-applications"}
+                to={"/applications"}
                 className="hover:text-[#3D7A6E] transition-colors"
               >
                 All Applications
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to={"/edit-applications"}
                 className="hover:text-[#3D7A6E] transition-colors"
               >
                 Edit Applications
-              </NavLink>{" "}
+              </NavLink>{" "} */}
               <NavLink
                 to={"/add-application"}
                 className="hover:text-[#3D7A6E] transition-colors"
