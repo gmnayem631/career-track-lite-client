@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 import { Button } from "@heroui/react";
 import { statusColors } from "../constants/statusColors";
 
