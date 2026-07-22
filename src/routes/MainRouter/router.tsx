@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/edit-applications",
+        path: "/edit-application/:id",
         element: (
           <PrivateRoute>
             <EditApplications />
