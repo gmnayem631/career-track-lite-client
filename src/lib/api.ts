@@ -1,6 +1,8 @@
 import auth from "../firebase/firebase.init";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : "http://localhost:3000/api";
 
 interface ApiOptions {
   method?: "GET" | "POST" | "PATCH" | "DELETE";
