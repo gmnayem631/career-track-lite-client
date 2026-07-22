@@ -4,24 +4,54 @@ import MainLayout from "../../layouts/MainLayout";
 import AuthLayout from "../../layouts/AuthLayout";
 import Register from "../../pages/Register/Register";
 import Login from "../../pages/Login/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Dashboard from "../../pages/Dashboard/Dashboard";
+import AllApplications from "../../pages/AllApplications/AllApplications";
+import EditApplications from "../../pages/EditApplications/EditApplications";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: MainLayout,
-    children: [{ index: true, Component: Home }],
+    element: <MainLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/all-applications",
+        element: (
+          <PrivateRoute>
+            <AllApplications />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/edit-applications",
+        element: (
+          <PrivateRoute>
+            <EditApplications />
+          </PrivateRoute>
+        ),
+      },
+    ],
   },
   {
     path: "/auth",
-    Component: AuthLayout,
+    element: <AuthLayout />,
     children: [
       {
         path: "/auth/register",
-        Component: Register,
+        element: <Register />,
       },
       {
         path: "/auth/login",
-        Component: Login,
+        element: <Login />,
       },
     ],
   },

@@ -15,6 +15,24 @@ const Navbar = () => {
           <NavLink to={"/"} className="hover:text-[#3D7A6E] transition-colors">
             How it works
           </NavLink>
+          <NavLink
+            to={"/dashboard"}
+            className="hover:text-[#3D7A6E] transition-colors"
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            to={"/all-applications"}
+            className="hover:text-[#3D7A6E] transition-colors"
+          >
+            All Applications
+          </NavLink>
+          <NavLink
+            to={"/edit-applications"}
+            className="hover:text-[#3D7A6E] transition-colors"
+          >
+            Edit Applications
+          </NavLink>
         </div>
 
         {/* Auth buttons */}
