@@ -3,10 +3,12 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import Navbar from "./components/Navbar.tsx";
 import Hero from "./components/Hero.tsx";
+import Features from "./components/Features.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Navbar></Navbar>
-    <Hero></Hero>
+    <Navbar />
+    <Hero />
+    <Features />
   </StrictMode>,
 );

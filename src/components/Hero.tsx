@@ -22,7 +22,7 @@ const Hero = () => {
         </p>
         <div className="mt-8 flex gap-4">
           <Button className="bg-[#3D7A6E] text-white hover:bg-[#336a5f] px-6">
-            Get Started — It's Free
+            Get Started - It's Free!
           </Button>
         </div>
       </div>
