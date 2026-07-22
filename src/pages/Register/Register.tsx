@@ -1,4 +1,3 @@
-// src/pages/Register/Register.tsx
 import { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import {
@@ -14,7 +13,7 @@ import { Check } from "lucide-react";
 import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, googleSignIn } = useAuth();
   const navigate = useNavigate();
   const [firebaseError, setFirebaseError] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -31,7 +30,6 @@ const Register = () => {
       await createUser(email, password);
       navigate("/dashboard");
     } catch (err: any) {
-      // Firebase error codes are like "auth/email-already-in-use"
       if (err.code === "auth/email-already-in-use") {
         setFirebaseError("An account with this email already exists.");
       } else {
@@ -39,6 +37,15 @@ const Register = () => {
       }
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    setFirebaseError("");
+    try {
+      await googleSignIn();
+    } catch (err: any) {
+      setFirebaseError("Google sign-in failed. Please try again.");
     }
   };
 
@@ -101,6 +108,20 @@ const Register = () => {
           {submitting ? "Creating account..." : "Create account"}
         </Button>
       </Form>
+      <div className="flex items-center gap-3 my-2">
+        <div className="flex-1 h-px bg-[#D8DCE3]" />
+        <span className="text-xs text-[#8B93A1]">OR</span>
+        <div className="flex-1 h-px bg-[#D8DCE3]" />
+      </div>
+
+      <Button
+        type="button"
+        variant="secondary"
+        onPress={handleGoogleSignIn}
+        className="w-full border border-[#D8DCE3]"
+      >
+        Continue with Google
+      </Button>
 
       <p className="mt-6 text-sm text-center text-[#3A3F4B]">
         Already have an account?{" "}
