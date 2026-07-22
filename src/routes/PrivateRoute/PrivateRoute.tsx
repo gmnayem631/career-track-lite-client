@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   if (loading) {
-    return <Spinner className="text-blue-500" />;
+    return <Spinner className="text-blue-500" size="xl" />;
   }
   if (!user) {
     return <Navigate to={"/auth/login"} state={{ from: location }} replace />;

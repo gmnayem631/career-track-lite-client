@@ -7,7 +7,7 @@ const pipelinePreview = ["Saved", "Applied", "Interview", "Offer"];
 
 const Hero = () => {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+    <section className="mx-auto max-w-6xl mt-10 px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
       {/* Left: headline + CTA */}
       <div>
         <h1 className="text-4xl md:text-5xl font-bold text-[#1E2A4A] leading-tight">
