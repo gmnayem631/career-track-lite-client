@@ -9,6 +9,7 @@ import Dashboard from "../../pages/Dashboard/Dashboard";
 import AllApplications from "../../pages/AllApplications/AllApplications";
 import EditApplications from "../../pages/EditApplications/EditApplications";
 import AddApplication from "../../pages/AddApplication/AddApplication";
+import Applications from "../../pages/Applications/Applications";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddApplication />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/applications",
+        element: (
+          <PrivateRoute>
+            <Applications />
           </PrivateRoute>
         ),
       },
