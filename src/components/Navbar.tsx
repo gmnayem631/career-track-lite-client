@@ -1,4 +1,5 @@
 import { Button } from "@heroui/react";
+import { Link, NavLink } from "react-router";
 const Navbar = () => {
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-[#D8DCE3] bg-white/80 backdrop-blur-md">
@@ -8,27 +9,21 @@ const Navbar = () => {
 
         {/* Nav links - hidden on mobile for now, we'll add a mobile menu later if time allows */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#3A3F4B]">
-          <a
-            href="#features"
-            className="hover:text-[#3D7A6E] transition-colors"
-          >
+          <NavLink to={"/"} className="hover:text-[#3D7A6E] transition-colors">
             Features
-          </a>
-          <a
-            href="#how-it-works"
-            className="hover:text-[#3D7A6E] transition-colors"
-          >
+          </NavLink>
+          <NavLink to={"/"} className="hover:text-[#3D7A6E] transition-colors">
             How it works
-          </a>
+          </NavLink>
         </div>
 
         {/* Auth buttons */}
         <div className="flex items-center gap-3">
           <Button variant="ghost" className="text-[#1E2A4A]">
-            Log in
+            <Link to={"/auth/login"}>Log in</Link>
           </Button>
           <Button className="bg-[#3D7A6E] text-white hover:bg-[#336a5f]">
-            Get Started
+            <Link to={"/auth/register"}>Get Started</Link>
           </Button>
         </div>
       </div>
