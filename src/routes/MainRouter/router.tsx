@@ -8,6 +8,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import AllApplications from "../../pages/AllApplications/AllApplications";
 import EditApplications from "../../pages/EditApplications/EditApplications";
+import AddApplication from "../../pages/AddApplication/AddApplication";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <EditApplications />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add-application",
+        element: (
+          <PrivateRoute>
+            <AddApplication />
           </PrivateRoute>
         ),
       },

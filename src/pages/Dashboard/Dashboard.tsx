@@ -7,11 +7,11 @@ const Dashboard = () => {
   useEffect(() => {
     const testBackend = async () => {
       const token = await user?.getIdToken();
-      const res = await fetch("http://localhost:5000/api/auth/me", {
+      const res = await fetch("http://localhost:3000/api/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
-      console.log("Backend response:", data);
+      console.log(await user?.getIdToken());
     };
 
     if (user) testBackend();
